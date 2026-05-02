@@ -34,6 +34,7 @@ type AuthState = {
   signOut: () => void;
   requestPasswordReset: (email: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
+  updateUserPlan: (plan: "free" | "pro") => void;
 };
 
 const STORAGE_KEY = "snapcut.auth.user";
@@ -114,6 +115,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     persistUser(next);
   }, []);
 
+  const updateUserPlan = useCallback((plan: "free" | "pro") => {
+    setUser((prev) => {
+      if (!prev) return null;
+      const next: AuthUser = {
+        ...prev,
+        plan,
+        dailyQuota: plan === "pro" ? 99999 : 5,
+        creditsRemaining: plan === "pro" ? 99999 : prev.creditsRemaining,
+      };
+      persistUser(next);
+      return next;
+    });
+  }, []);
+
   const value = useMemo<AuthState>(
     () => ({
       user,
@@ -124,8 +139,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       signOut,
       requestPasswordReset,
       signInWithGoogle,
+      updateUserPlan,
     }),
-    [user, isLoading, signIn, signUp, signOut, requestPasswordReset, signInWithGoogle],
+    [user, isLoading, signIn, signUp, signOut, requestPasswordReset, signInWithGoogle, updateUserPlan],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -21,10 +21,18 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-semibold text-foreground">Account</h4>
+          <h4 className="text-sm font-semibold text-foreground">Support</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/login" className="hover:text-foreground">Log in</Link></li>
-            <li><Link to="/register" className="hover:text-foreground">Create account</Link></li>
+            <li><Link to="/contact" className="hover:text-foreground">Contact Us</Link></li>
+            <li><Link to="/shipping" className="hover:text-foreground">Shipping & Delivery</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm font-semibold text-foreground">Legal</h4>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-foreground">Terms & Conditions</Link></li>
+            <li><Link to="/refund" className="hover:text-foreground">Refund & Cancellation</Link></li>
           </ul>
         </div>
       </div>
