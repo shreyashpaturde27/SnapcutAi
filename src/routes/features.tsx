@@ -39,32 +39,32 @@ const items = [
 function FeaturesPage() {
   return (
     <SiteShell>
-      <section className="mx-auto max-w-6xl px-4 py-20">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold sm:text-5xl">
+      <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
             Everything you need for <span className="text-gradient-brand">clean cutouts</span>
           </h1>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-6 text-xl text-muted-foreground sm:text-2xl">
             Built for creators and teams that ship visual work daily.
           </p>
         </div>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((f) => (
-            <Card key={f.title} className="glass p-6 transition-shadow hover:shadow-glow">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-brand-soft border border-border/60">
-                <f.icon className="h-5 w-5 text-secondary" />
+            <Card key={f.title} className="glass p-10 transition-all duration-300 hover:shadow-glow hover:scale-[1.02]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-brand-soft border border-border/60">
+                <f.icon className="h-7 w-7 text-secondary" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+              <h3 className="mt-8 text-2xl font-bold tracking-tight">{f.title}</h3>
+              <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{f.desc}</p>
             </Card>
           ))}
         </div>
 
-        <div className="mt-14 flex justify-center">
+        <div className="mt-20 flex justify-center">
           <Button
             asChild
-            size="lg"
-            className="bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
+            size="xl"
+            className="h-14 px-10 text-lg font-semibold bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
           >
             <Link to="/register">Start free</Link>
           </Button>
