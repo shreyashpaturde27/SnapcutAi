@@ -45,11 +45,11 @@ function Hero() {
           <Sparkles className="mr-2 h-4 w-4" />
           Powered by next-gen segmentation AI
         </Badge>
-        <h1 className="mx-auto mt-8 max-w-5xl text-6xl font-extrabold leading-[1.02] tracking-tight sm:text-8xl lg:text-9xl">
+        <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-extrabold leading-[1.1] tracking-tight sm:text-7xl lg:text-8xl">
           Remove image backgrounds in{" "}
           <span className="text-gradient-brand">under 5 seconds</span>
         </h1>
-        <p className="mx-auto mt-10 max-w-3xl text-xl text-muted-foreground sm:text-2xl lg:text-3xl">
+        <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl lg:text-2xl">
           SnapCut AI gives you pixel-perfect cutouts for product photos,
           portraits, and creative work — no Photoshop required.
         </p>

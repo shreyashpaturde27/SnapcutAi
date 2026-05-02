@@ -64,40 +64,40 @@ function LoginPage() {
         </>
       }
     >
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" autoComplete="email" {...register("email")} />
+          <Label htmlFor="email" className="text-base font-medium">Email</Label>
+          <Input id="email" type="email" autoComplete="email" className="h-12 text-base" {...register("email")} />
           {errors.email && (
-            <p className="mt-1 text-xs text-destructive">{errors.email.message}</p>
+            <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
           )}
         </div>
         <div>
-          <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
-            <Link to="/forgot-password" className="text-xs text-muted-foreground hover:text-foreground">
+          <div className="flex items-center justify-between mb-1">
+            <Label htmlFor="password" title="password" className="text-base font-medium">Password</Label>
+            <Link to="/forgot-password" title="forgot-password" className="text-sm text-muted-foreground hover:text-foreground">
               Forgot?
             </Link>
           </div>
-          <Input id="password" type="password" autoComplete="current-password" {...register("password")} />
+          <Input id="password" type="password" autoComplete="current-password" className="h-12 text-base" {...register("password")} />
           {errors.password && (
-            <p className="mt-1 text-xs text-destructive">{errors.password.message}</p>
+            <p className="mt-1 text-sm text-destructive">{errors.password.message}</p>
           )}
         </div>
         <Button
           type="submit"
-          className="w-full bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
+          className="w-full h-12 text-base font-semibold bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
           disabled={submitting}
         >
-          {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {submitting && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
           Sign in
         </Button>
 
-        <div className="relative my-2">
+        <div className="relative my-4">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t border-border/60" />
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
+          <div className="relative flex justify-center text-sm uppercase font-medium">
             <span className="bg-card/0 px-2 text-muted-foreground">or</span>
           </div>
         </div>
@@ -105,7 +105,7 @@ function LoginPage() {
         <Button
           type="button"
           variant="outline"
-          className="w-full"
+          className="w-full h-12 text-base font-medium"
           onClick={async () => {
             await signInWithGoogle();
             toast.success("Signed in with Google");
