@@ -45,11 +45,11 @@ function Hero() {
           <Sparkles className="mr-2 h-4 w-4" />
           Powered by next-gen segmentation AI
         </Badge>
-        <h1 className="mx-auto mt-8 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
+        <h1 className="mx-auto mt-8 max-w-5xl text-6xl font-extrabold leading-[1.02] tracking-tight sm:text-8xl lg:text-9xl">
           Remove image backgrounds in{" "}
           <span className="text-gradient-brand">under 5 seconds</span>
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl lg:text-2xl">
+        <p className="mx-auto mt-10 max-w-3xl text-xl text-muted-foreground sm:text-2xl lg:text-3xl">
           SnapCut AI gives you pixel-perfect cutouts for product photos,
           portraits, and creative work — no Photoshop required.
         </p>
@@ -157,9 +157,9 @@ const features = [
 function Features() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Built for speed and precision</h2>
-        <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
+      <div className="mx-auto max-w-4xl text-center">
+        <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl">Built for speed and precision</h2>
+        <p className="mt-6 text-xl text-muted-foreground sm:text-2xl">
           Everything you need to ship clean cutouts at scale.
         </p>
       </div>
@@ -187,15 +187,15 @@ function HowItWorks() {
   return (
     <section className="border-t border-border/60 bg-card/30">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Three steps. That's it.</h2>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl">Three steps. That's it.</h2>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <Card key={s.n} className="glass p-8">
-              <p className="font-display text-4xl font-bold text-gradient-brand">{s.n}</p>
-              <h3 className="mt-4 text-xl font-semibold">{s.t}</h3>
-              <p className="mt-2 text-base text-muted-foreground">{s.d}</p>
+            <Card key={s.n} className="glass p-10">
+              <p className="font-display text-5xl font-extrabold text-gradient-brand">{s.n}</p>
+              <h3 className="mt-4 text-2xl font-bold">{s.t}</h3>
+              <p className="mt-2 text-lg text-muted-foreground">{s.d}</p>
             </Card>
           ))}
         </div>
