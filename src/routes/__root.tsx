@@ -1,8 +1,6 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/lib/auth";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -27,47 +25,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SnapCut AI — Instant AI Background Removal" },
-      {
-        name: "description",
-        content:
-          "Remove image backgrounds in under 5 seconds with SnapCut AI. Pixel-perfect cutouts powered by AI for creators, e-commerce, and teams.",
-      },
-      { name: "author", content: "SnapCut AI" },
-      { property: "og:title", content: "SnapCut AI — Instant AI Background Removal" },
-      {
-        property: "og:description",
-        content: "Pixel-perfect AI cutouts in seconds. Built for creators and teams.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@SnapCutAI" },
-    ],
-    links: [{ rel: "stylesheet", href: appCss }],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className="dark">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-        <script src="https://checkout.razorpay.com/v1/checkout.js" async></script>
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (
