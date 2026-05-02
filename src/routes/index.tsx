@@ -40,39 +40,39 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="bg-hero-glow absolute inset-0 -z-10" />
-      <div className="mx-auto max-w-6xl px-4 pt-20 pb-24 text-center sm:pt-28">
-        <Badge className="bg-gradient-brand-soft border-border/60 text-foreground">
-          <Sparkles className="mr-1.5 h-3.5 w-3.5" />
+      <div className="mx-auto max-w-6xl px-4 pt-24 pb-32 text-center sm:pt-32">
+        <Badge className="bg-gradient-brand-soft border-border/60 py-1.5 px-4 text-sm text-foreground">
+          <Sparkles className="mr-2 h-4 w-4" />
           Powered by next-gen segmentation AI
         </Badge>
-        <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+        <h1 className="mx-auto mt-8 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
           Remove image backgrounds in{" "}
           <span className="text-gradient-brand">under 5 seconds</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
+        <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl lg:text-2xl">
           SnapCut AI gives you pixel-perfect cutouts for product photos,
           portraits, and creative work — no Photoshop required.
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             asChild
-            size="lg"
-            className="bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
+            size="xl"
+            className="h-14 bg-gradient-brand px-8 text-lg text-primary-foreground shadow-glow hover:opacity-95"
           >
             <Link to="/register">Try it free</Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-border/80">
+          <Button asChild size="xl" variant="outline" className="h-14 border-border/80 px-8 text-lg">
             <Link to="/features">See features</Link>
           </Button>
         </div>
 
-        <p className="mt-4 text-xs text-muted-foreground">
+        <p className="mt-6 text-sm text-muted-foreground">
           5 free images per day · No credit card required
         </p>
 
         {/* Preview card */}
-        <div className="relative mx-auto mt-14 max-w-4xl">
+        <div className="relative mx-auto mt-20 max-w-5xl">
           <div className="absolute -inset-x-6 -inset-y-4 -z-10 bg-gradient-brand-soft blur-3xl" />
           <Card className="glass overflow-hidden p-2 shadow-card-elev">
             <div className="grid grid-cols-2 gap-2">
@@ -112,9 +112,9 @@ function LogoStrip() {
   const labels = ["Shopify Sellers", "Indie Studios", "Marketing Teams", "Photographers", "Agencies"];
   return (
     <section className="border-y border-border/60 bg-card/40">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 py-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-4 py-10 text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground/80">
         {labels.map((l) => (
-          <span key={l}>{l}</span>
+          <span key={l} className="whitespace-nowrap">{l}</span>
         ))}
       </div>
     </section>
@@ -156,21 +156,21 @@ const features = [
 
 function Features() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold sm:text-4xl">Built for speed and precision</h2>
-        <p className="mt-3 text-muted-foreground">
+    <section className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Built for speed and precision</h2>
+        <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
           Everything you need to ship clean cutouts at scale.
         </p>
       </div>
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((f) => (
-          <Card key={f.title} className="glass p-6 transition-shadow hover:shadow-glow">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-brand-soft border border-border/60">
-              <f.icon className="h-5 w-5 text-secondary" />
+          <Card key={f.title} className="glass p-8 transition-all duration-300 hover:shadow-glow hover:scale-[1.02]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-brand-soft border border-border/60">
+              <f.icon className="h-6 w-6 text-secondary" />
             </div>
-            <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
-            <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
+            <h3 className="mt-6 text-xl font-semibold">{f.title}</h3>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">{f.desc}</p>
           </Card>
         ))}
       </div>
@@ -186,16 +186,16 @@ function HowItWorks() {
   ];
   return (
     <section className="border-t border-border/60 bg-card/30">
-      <div className="mx-auto max-w-6xl px-4 py-20">
+      <div className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Three steps. That's it.</h2>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Three steps. That's it.</h2>
         </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <Card key={s.n} className="glass p-6">
-              <p className="font-display text-3xl text-gradient-brand">{s.n}</p>
-              <h3 className="mt-2 text-lg font-semibold">{s.t}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{s.d}</p>
+            <Card key={s.n} className="glass p-8">
+              <p className="font-display text-4xl font-bold text-gradient-brand">{s.n}</p>
+              <h3 className="mt-4 text-xl font-semibold">{s.t}</h3>
+              <p className="mt-2 text-base text-muted-foreground">{s.d}</p>
             </Card>
           ))}
         </div>
@@ -206,18 +206,18 @@ function HowItWorks() {
 
 function FinalCta() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
-      <Card className="glass relative overflow-hidden p-10 text-center shadow-card-elev">
+    <section className="mx-auto max-w-6xl px-4 py-24 sm:py-32">
+      <Card className="glass relative overflow-hidden p-12 text-center shadow-card-elev sm:p-20">
         <div className="bg-hero-glow absolute inset-0 -z-10 opacity-60" />
-        <h2 className="text-3xl font-bold sm:text-4xl">Start cutting in seconds</h2>
-        <p className="mx-auto mt-3 max-w-md text-muted-foreground">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">Start cutting in seconds</h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
           5 free images every day. Upgrade when you're ready.
         </p>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <Button
             asChild
-            size="lg"
-            className="bg-gradient-brand text-primary-foreground shadow-glow hover:opacity-95"
+            size="xl"
+            className="h-14 bg-gradient-brand px-10 text-lg text-primary-foreground shadow-glow hover:opacity-95"
           >
             <Link to="/register">Create free account</Link>
           </Button>
