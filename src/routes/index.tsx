@@ -39,15 +39,17 @@ function LandingPage() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="bg-hero-glow absolute inset-0 -z-10" />
-      <div className="mx-auto max-w-6xl px-4 pt-24 pb-32 text-center sm:pt-32">
+      <div className="absolute inset-0 -z-10 bg-hero-glow opacity-80 blur-2xl" />
+      <div className="relative mx-auto max-w-6xl px-4 pt-24 pb-32 text-center sm:pt-32 animate-[fadeIn_1s_ease-in]">
         <Badge className="bg-gradient-brand-soft border-border/60 py-1.5 px-4 text-sm text-foreground">
           <Sparkles className="mr-2 h-4 w-4" />
           Powered by next-gen segmentation AI
         </Badge>
-        <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-extrabold leading-[1.1] tracking-tight sm:text-7xl lg:text-8xl">
-          Remove image backgrounds in{" "}
-          <span className="text-gradient-brand">under 5 seconds</span>
+        <h1 className="mx-auto mt-8 max-w-5xl text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-tight tracking-tight">
+          Remove image backgrounds <br />
+          <span className="text-gradient-brand drop-shadow-[0_0_20px_rgba(79,140,255,0.7)]">
+            in under 5 seconds
+          </span>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl lg:text-2xl">
           SnapCut AI gives you pixel-perfect cutouts for product photos,
@@ -58,7 +60,7 @@ function Hero() {
           <Button
             asChild
             size="xl"
-            className="h-14 bg-gradient-brand px-8 text-lg text-primary-foreground shadow-glow hover:opacity-95"
+            className="h-14 bg-gradient-brand px-8 text-lg text-primary-foreground shadow-[0_0_25px_rgba(79,140,255,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.7)] transition-all duration-300"
           >
             <Link to="/register">Try it free</Link>
           </Button>
